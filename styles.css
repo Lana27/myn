@@ -1,0 +1,158 @@
+/* Основные стили для страниц */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 15px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Контейнер для блока и текста */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%; /* фиксируем ширину */
+  text-align: center;
+  margin-top: 80px; /* с учетом фиксированной навигации */
+}
+
+.glow-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+}
+
+.glow-image {
+  width: 600px; /* фиксируем размер изображений */
+  height: 600px;
+  object-fit: cover; /* сохраняем соотношение сторон */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Описание блока */
+.block-description {
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.block-description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.block-description p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* Одинаковое поведение для всех страниц */
+body.bedrock-page .glow-container {
+  animation: glow-white 2s infinite;
+}
+
+body.tnt-page .glow-container {
+  animation: glow-red 2s infinite;
+}
+
+body.magma-page .glow-container {
+  animation: glow-orange 2s infinite;
+}
+
+@keyframes glow-white {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+  }
+}
+
+@keyframes glow-red {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+  }
+}
+
+@keyframes glow-orange {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 165, 0, 1);
+  }
+}
+/* Основной контейнер галереи */
+.gallery-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Колонка изображений */
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+/* Каждый элемент галереи */
+.gallery-item {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Изображения в галерее */
+.gallery-item img {
+  width: 100%;
+  max-width: 240px; /* Фиксированная ширина */
+  max-height: 240px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Текст под изображением */
+.gallery-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
